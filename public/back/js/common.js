@@ -39,7 +39,11 @@ $(function() {
     })
 
     // 3. 退出功能
-    
+    // (1) 点击有侧按钮，显示模态框
+    $('.icon_right').click(function() {
+        $('#logoutModal').modal('show');
+    })
+
 
 
 

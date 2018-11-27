@@ -13,6 +13,10 @@ li {
     list-style: none;
 }
 
+.red {
+    color: #A94442;
+}
+
 /* login */
 .body_bg {
     background-color: #222D32;
