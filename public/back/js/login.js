@@ -1,10 +1,10 @@
 $(function () {
     /*
-     * 1. 进行表单校验配置
-     *    校验要求:
-     *        (1) 用户名不能为空, 长度为2-6位
-     *        (2) 密码不能为空, 长度为6-12位
-     * */
+        1. 进行表单校验配置
+            校验要求:
+            (1) 用户名不能为空, 长度为2-6位
+            (2) 密码不能为空, 长度为6-12位
+     */
     $('#form').bootstrapValidator({
 
         // 配置校验图标
@@ -56,42 +56,51 @@ $(function () {
     });
 
     /*
-     * 2. 校验成功后，会触发一个事件，表单校验成功事件
-     *    默认是会提交表单的，页面就跳转了
-     *    我们需要注册表单校验成功事件，在成功事件中阻止默认的提交，通过ajax提交
-     * */
+        2. 校验成功后，会触发一个事件，表单校验成功事件
+            默认是会提交表单的，页面就跳转了
+            我们需要注册表单校验成功事件，在成功事件中阻止默认的提交，通过ajax提交
+    */
 
-     $('#form').on('success.form.bv', function(e) {
-         // 阻止默认的提交
-         e.preventDefault();
+    $('#form').on('success.form.bv', function (e) {
+        // 阻止默认的提交
+        e.preventDefault();
 
         //  console.log("默认的提交被阻止了,通过ajax提交");
 
         $.ajax({
             type: "post",
-            url: "/employee/employeeLogout",
+            url: "/employee/employeeLogin",
             data: $('#form').serialize(), // 一次性收集当前表单数据
             dataType: 'json',
-            success: function(info) {
+            success: function (info) {
                 console.log(info);
-                // if (info.error === 1000) {
-                //     alert ("用户名不存在");
-                //     return;
-                // }
-                // if (info.error === 1001) {
-                //     alert ("密码错误");
-                // }
-                // if (info.success) {
-                //    登录成功
-                //    location.href = "index.html";
-                // }
+                if (info.error === 1000) {
+                    alert("用户名不存在");
+                    return;
+                }
+                if (info.error === 1001) {
+                    alert("密码错误");
+                }
+                if (info.success) {
+                    //    登录成功
+                    location.href = "index.html";
+                }
 
             }
         })
 
 
-     })
+    })
 
 
+    /* 3. 重置：本身重置按钮, 就可以重置内容, 需要额外的重置状态    */
+    $("[type='reset']").on("click", function () {
+        // resetForm( boolean );
+        // resetForm();   只重置状态
+        // resetForm(true);  重置内容 和 状态
+        //重置表单样式
+        $("#form").data("bootstrapValidator").resetForm();
+
+    });
 
 })
