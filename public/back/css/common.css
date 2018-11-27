@@ -42,6 +42,11 @@ li {
     width: 180px;
     background-color: #222D32;
     z-index: 999;
+    transition: all 1s;
+}
+
+.lt_aside.hidemenu {
+    left: -180px;
 }
 
 .lt_aside .brand {
@@ -118,6 +123,11 @@ li {
     width: 100%;
     height: 50px;
     padding-left: 180px;
+    transition: all 1s;
+}
+
+.lt_topbar.hidemenu {
+    padding-left: 0px;
 }
 
 .lt_main .lt_topbar .icon_left,
@@ -135,4 +145,9 @@ li {
     background-color: lightblue;
     padding-left: 180px;
     padding-top: 50px;
+    transition: all 1s;
+}
+
+.lt_main.hidemenu {
+    padding-left: 0px;
 }
