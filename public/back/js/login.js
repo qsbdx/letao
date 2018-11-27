@@ -67,7 +67,7 @@ $(function () {
 
         //  console.log("默认的提交被阻止了,通过ajax提交");
 
-        $.ajax ({
+        $.ajax({
             type: "post",
             url: "/employee/employeeLogout",
             data: $('#form').serialize(), // 一次性收集当前表单数据
