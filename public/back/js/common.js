@@ -44,7 +44,14 @@ $(function() {
         $('#logoutModal').modal('show');
     })
 
+    // (2) 点击退出模态框的退出按钮，完成退出功能
+    $('#logoutBtn').click(function() {
+        
+        // 发送ajax请求，让后台销毁当前用户的登录状态
+        // $.ajax({
 
+        // })
+    })
 
 
 })
