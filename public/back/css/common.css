@@ -17,6 +17,15 @@ li {
     color: #A94442;
 }
 
+
+/* 需求：所有表格的 td 和 th 都内容居中 */
+.table.table-bordered td,
+.table.table-bordered th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
 /* login */
 .body_bg {
     background-color: #222D32;
