@@ -128,6 +128,7 @@ li {
     height: 50px;
     padding-left: 180px;
     transition: all 1s;
+    z-index: 998;
 }
 
 .lt_topbar.hidemenu {
@@ -146,7 +147,7 @@ li {
 
 .lt_main {
     height: 2000px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     padding-left: 180px;
     padding-top: 50px;
     transition: all 1s;
@@ -154,4 +155,11 @@ li {
 
 .lt_main.hidemenu {
     padding-left: 0px;
+}
+
+.echarts_left,
+.echarts_right {
+    width: 48%;
+    height: 400px;
+    background-color: #fff;
 }
