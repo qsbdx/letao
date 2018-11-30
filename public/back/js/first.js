@@ -24,16 +24,18 @@ $(function () {
 
                 // 数据回来，进行分页初始化
                 $('#paginator').bootstrapPaginator({
-                    bootstrapMajorVersion: 3, // 指定版本号
+                    bootstrapMajorVersion: 3, // 版本号
                     currentPage: info.page, // 当前页
                     totalPages: Math.ceil(info.total / info.size), // 总页数
-                    onPageClick: function (a, b, c, page) {
-                        console.log(page)
+                    // 添加页码点击事件
+                    onPageClicked: function (a, b, c, page) {
                         // 更新当前页
                         currentPage = page;
-                        // 重新渲染
+
+                        // 重新渲染页面
                         render();
                     }
+
                 })
 
             }
