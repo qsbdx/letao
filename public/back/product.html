@@ -1,110 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>乐淘电商</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css" />
-    <link
-      rel="stylesheet"
-      href="./lib/bootstrap-validator/css/bootstrapValidator.min.css"
-    />
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
     <link rel="stylesheet" href="./css/common.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- 乐淘侧边栏 -->
     <div class="lt_aside">
-      <div class="brand"><a href="#">黑马31期</a></div>
+        <div class="brand"><a href="#">黑马31期</a></div>
 
-      <div class="user">
-        <img src="./images/1.jpg" alt="" />
-        <p>高桥</p>
-      </div>
+        <div class="user">
+            <img src="./images/1.jpg" alt="" />
+            <p>高桥</p>
+        </div>
 
-      <div class="nav">
-        <ul>
-          <li>
-            <a href="user.html"
-              ><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a
-            >
-          </li>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a>
+                </li>
 
-          <li>
-            <a href="javascript:;" class="category"
-              ><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a
-            >
-            <!-- 用于切换展示的二级列表 -->
-            <div class="child">
-              <a href="first.html">一级分类</a>
-              <a href="second.html">二级分类</a>
-            </div>
-          </li>
+                <li>
+                    <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+                    <!-- 用于切换展示的二级列表 -->
+                    <div class="child">
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
+                    </div>
+                </li>
 
-          <li>
-            <a href="product.html" class="active"
-              ><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a
-            >
-          </li>
-        </ul>
-      </div>
+                <li>
+                    <a href="product.html" class="active"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <!-- 右侧主体部分 -->
     <div class="lt_main">
-      <!-- 上面的topbar -->
-      <div class="lt_topbar">
-        <a href="#" class="icon_left pull-left"
-          ><i class="glyphicon glyphicon-align-justify"></i
-        ></a>
-        <a href="#" class="icon_right pull-right"
-          ><i class="glyphicon glyphicon-log-out"></i
-        ></a>
-      </div>
+        <!-- 上面的topbar -->
+        <div class="lt_topbar">
+            <a href="#" class="icon_left pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="#" class="icon_right pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
 
-      <!--
+        <!--
         底下一个流式布局容器 container-fluid 特点：默认宽度100% 有左右的15px padding
       -->
-      <div class="container-fluid">
-        <!-- 面包屑导航 -->
-        <ol class="breadcrumb mt_20">
-          <li><a href="index.html">管理系统</a></li>
-          <li class="active">商品管理</li>
-        </ol>
+        <div class="container-fluid">
+            <!-- 面包屑导航 -->
+            <ol class="breadcrumb mt_20">
+                <li><a href="index.html">管理系统</a></li>
+                <li class="active">商品管理</li>
+            </ol>
 
-        <div class="lt_content">
-          <!-- 添加按钮 -->
-          <button class="btn btn-default" id="addBtn">添加商品</button>
+            <div class="lt_content">
+                <!-- 添加按钮 -->
+                <button class="btn btn-default" id="addBtn">添加商品</button>
 
-          <!-- 表格 -->
-          <table class="table table-bordered table-hover mt_20">
-            <thead>
-              <tr>
-                <th>序号</th>
-                <th>商品名称</th>
-                <th>商品描述</th>
-                <th>商品库存</th>
-                <th>商品尺寸</th>
-                <th>商品状态</th>
-                <th>操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- 挖个坑 -->
-            </tbody>
-          </table>
+                <!-- 表格 -->
+                <table class="table table-bordered table-hover mt_20">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>商品名称</th>
+                            <th>商品描述</th>
+                            <th>商品库存</th>
+                            <th>商品尺寸</th>
+                            <th>商品状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖个坑 -->
+                    </tbody>
+                </table>
 
-          <!-- 准备一个分页容器  3.X  要求 ul -->
-          <div class="text-right"><ul id="paginator"></ul></div>
+                <!-- 准备一个分页容器  3.X  要求 ul -->
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <!--
+        <!--
         data-toggle="modal"        标记用于切换模态框
         data-target="#logoutModal" 通过id关联具体显示哪一个模态框
       -->
-      <!--
+        <!--
         <button data-toggle="modal" data-target="#logoutModal">我是按钮</button>
       -->
     </div>
@@ -115,134 +105,124 @@
 
     <!-- 外层：遮罩层 退出模态框 -->
     <div class="modal fade" id="logoutModal" tabindex="-1">
-      <!-- 模态框 -->
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-          </div>
-          <div class="modal-body">
-            <p class="red">
-              <i class="glyphicon glyphicon-info-sign"></i
-              >您确定要退出后台管理系统吗？
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              取消
-            </button>
-            <button type="button" class="btn btn-primary" id="logoutBtn">
-              退出
-            </button>
-          </div>
+        <!-- 模态框 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="red">
+                        <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消
+                    </button>
+                    <button type="button" class="btn btn-primary" id="logoutBtn">
+                        退出
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- 添加商品模态框 -->
     <div class="modal fade" id="addModal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form id="form">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span>&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">添加商品</h4>
-            </div>
-            <div class="modal-body">
-              <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">添加商品</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
 
-              <div class="form-group">
-                <!-- 下拉框 -->
-                <div class="dropdown">
-                  <button
-                    class="btn btn-default dropdown-toggle"
-                    type="button"
-                    id="dropdownMenu1"
-                    data-toggle="dropdown"
-                  >
-                    <span id="dropdownText">请选择二级分类</span>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <!-- 挖个坑 -->
-                  </ul>
-                </div>
+                        <div class="form-group">
+                            <!-- 下拉框 -->
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown">
+                                    <span id="dropdownText">请选择二级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!-- 挖个坑 -->
+                                </ul>
+                            </div>
 
-                <!-- 准备一个隐藏域 -->
-                <!-- <input type="hidden" name="brandId"> -->
-                <input type="hidden" name="brandId">
-              </div>
+                            <!-- 准备一个隐藏域 -->
+                            <!-- <input type="hidden" name="brandId"> -->
+                            <input type="hidden" name="brandId">
 
-              <div class="form-group">
-                    <textarea class="form-control" cols="30" rows="4" 
-                    placeholder="请输入商品名称"></textarea>
-                </div>
+                            <!-- 上下架, 默认所有商品都上架  上架1, 下架0 -->
+                            <input type="hidden" name="statu" value="1">
+                        </div>
 
-              <div class="form-group">
-                    <input type="text" name="proDesc" class="form-control" placeholder="请输入商品描述"/>
-              </div>
+                        <div class="form-group">
+                            <input type="text" name="proName" class="form-control" placeholder="请输入商品名称" />
+                        </div>
 
-              <div class="form-group">
-                    <input type="text" name="num" class="form-control" placeholder="请输入商品库存"/>
-              </div>
+                        <div class="form-group">
 
-              <div class="form-group">
-                    <input type="text" name="size" class="form-control" placeholder="请输入商品尺码"/>
-              </div>
-              
-              <div class="form-group">
-                    <input type="text" name="oldPrice" class="form-control" placeholder="请输入商品原价"/>
-              </div>
-              
-              <div class="form-group">
-                    <input type="text" name="price" class="form-control" placeholder="请输入商品现价"/>
-              </div>
+                            <textarea class="form-control" name="proDesc" cols="30" rows="4" placeholder="请输入商品描述"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="num" class="form-control" placeholder="请输入商品库存" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="size" class="form-control" placeholder="请输入商品尺码" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="oldPrice" class="form-control" placeholder="请输入商品原价" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="price" class="form-control" placeholder="请输入商品现价" />
+                        </div>
 
 
-              <div class="form-group">
-                <!-- <button class="btn btn-default">上传图片</button> -->
-                <label for="fileupload" class="btn btn-default">上传图片</label>
+                        <div class="form-group">
+                            <!-- <button class="btn btn-default">上传图片</button> -->
+                            <label for="fileupload" class="btn btn-default">上传图片</label>
 
-                <!--
+                            <!--
                   指定name, 用于后台接收图片对象
                   指定data-url, 配置后台图片上传的接口地址
                   multiple  就可以选择多个文件，一般用于多文件上传
                 -->
-                <input
-                  type="file"
-                  name="pic1"
-                  multiple
-                  data-url="/product/addProductPic"
-                  id="fileupload"
-                  style="display: none;"
-                />
-              </div>
+                            <input type="file" name="pic1" multiple data-url="/product/addProductPic" id="fileupload"
+                                style="display: none;" />
+                        </div>
 
-              <div class="form-group" id="imgBox">
-                <!-- <img src="./images/none.jpg" style="width: 100px;" /> -->
-               
-              </div>
+                        <div class="form-group" id="imgBox">
+                            <!-- <img src="./images/none.jpg" style="width: 100px;" /> -->
+
+                            <!-- 准备一个专门用于校验的隐藏域, 标记图片上传是否满3张 -->
+                            <input type="hidden" name="picStatus">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            取消
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="Btn">
+                            添加
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                取消
-              </button>
-              <button type="submit" class="btn btn-primary" id="Btn">
-                添加
-              </button>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
 
     <!--
@@ -292,5 +272,6 @@
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
     <script src="./js/product.js"></script>
-  </body>
+</body>
+
 </html>
