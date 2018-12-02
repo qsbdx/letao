@@ -147,6 +147,11 @@
                                     <!-- 挖个坑 -->
                                 </ul>
                             </div>
+
+                            <!-- 准备一个隐藏域 -->
+                            <input type="hidden" name="categoryId">
+                            <!-- 火热的品牌 hot 1火热  0凉凉 -->
+                            <input type="hidden" name="hot" value="1">
                         </div>
 
                         <div class="form-group">
@@ -167,6 +172,8 @@
 
                         <div class="form-group" id="imgBox">
                             <img src="./images/none.jpg" style="width: 100px;">
+                            <!-- 添加一个隐藏域，专门用于提交图片地址 -->
+                            <input type="hidden" name="brandLogo">
                         </div>
 
 
@@ -198,7 +205,7 @@
     <!-- 下拉框模板 -->
     <script type="text/html" id="dropdownTpl">
         {{ each rows v i }}
-        <li><a href="#">{{ v.categoryName }}</a></li>
+        <li><a href="#" data-id="{{ v.id }}">{{ v.categoryName }}</a></li>
         {{ /each }}
     </script>
 

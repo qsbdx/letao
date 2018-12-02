@@ -80,7 +80,7 @@ $(function () {
         $('[name="categoryId"]').val(id);
 
         // 调用updateStatus更新 隐藏域 校验状态成 VALID
-
+        $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID")
 
     })
 
@@ -98,9 +98,93 @@ $(function () {
             // 获取图片地址，设置给 img src
             var picUrl = picObj.picAddr;
             $('#imgBox img').attr("src", picUrl);
+
+            // 给隐藏域设置图片地址
+            $('[name="brandLogo"]').val(picUrl);
+
+            // 调用updateStatus更新 隐藏域 校验状态成 VALID
+            $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID")
         }
     });
 
-    // 5. 
+    // 5. 添加表单校验功能
 
+    $('#form').bootstrapValidator({
+        // 重置排除项, 都校验, 不排除
+        excluded: [],
+
+        // 配置校验图标
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok', // 校验成功
+            invalid: 'glyphicon glyphicon-remove', // 校验失败
+            validating: 'glyphicon glyphicon-refresh' // 校验中
+        },
+
+        // 指定校验字段
+        fields: {
+            categoryId: {
+                validators: {
+                    notEmpty: {
+                        message: "请选择一级分类"
+                    }
+                }
+            },
+            brandName: {
+                validators: {
+                    notEmpty: {
+                        message: "请输入二级分类名称"
+                    }
+                }
+            },
+            brandLogo: {
+                validators: {
+                    notEmpty: {
+                        message: "请上传图片"
+                    }
+                }
+            },
+
+
+        }
+    })
+
+
+    /*
+    $('#form').bootstrapValidator({
+        // 重置排除项, 都校验, 不排除
+        excluded: [],
+
+        // 配置校验图标
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok', // 校验成功
+            invalid: 'glyphicon glyphicon-remove', // 校验失败
+            validating: 'glyphicon glyphicon-refresh' // 校验中
+        },
+
+        // 指定校验字段
+        fields: {
+            categoryId: {
+                validators: {
+                    notEmpty: {
+                        message: "请选择一级分类"
+                    }
+                }
+            },
+            brandName: {
+                validators: {
+                    notEmpty: {
+                        message: "请输入二级分类名称"
+                    }
+                }
+            },
+            brandLogo: {
+                validators: {
+                    notEmpty: {
+                        message: "请上传图片"
+                    }
+                }
+            }
+        }
+    })
+    */
 })
