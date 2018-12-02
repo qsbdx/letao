@@ -107,8 +107,8 @@ $(function () {
         }
     });
 
+   
     // 5. 添加表单校验功能
-
     $('#form').bootstrapValidator({
         // 重置排除项, 都校验, 不排除
         excluded: [],
@@ -149,42 +149,36 @@ $(function () {
     })
 
 
-    /*
-    $('#form').bootstrapValidator({
-        // 重置排除项, 都校验, 不排除
-        excluded: [],
+    // 6. 注册表单校验成功事件，阻止默认的表单提交，通过ajax提交
+    $("#form").on("success.form.bv", function( e ) {
+        e.preventDefault(); // 阻止默认提交
 
-        // 配置校验图标
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok', // 校验成功
-            invalid: 'glyphicon glyphicon-remove', // 校验失败
-            validating: 'glyphicon glyphicon-refresh' // 校验中
-        },
+        $.ajax({
+            type: "post",
+            url: "/category/addSecondCategory",
+            data: $('#form').serialize(),
+            dataType: "json",
+            success: function(info){
+                console.log(info);
+                if(info.success){
+                    // 添加成功
+                    // 关闭模态框
+                    $('#addModal').modal("hide");
+                    // 重新渲染第一页
+                    currentPage = 1;
+                    render();
 
-        // 指定校验字段
-        fields: {
-            categoryId: {
-                validators: {
-                    notEmpty: {
-                        message: "请选择一级分类"
-                    }
+                    // 渲染完成后，重置表单内容和状态  
+                    // resetForm(true) 表示表单内容和状态都重置
+                    $('#form').data("bootstrapValidator").resetForm(true);
+
+                    // 由于下拉菜单和图片不是表单元素，需要手动重置
+                    $('#dropdownText').text("请选择一级分类");
+                    $('#imgBox img').attr("src", "./images/none.jpg");
                 }
             },
-            brandName: {
-                validators: {
-                    notEmpty: {
-                        message: "请输入二级分类名称"
-                    }
-                }
-            },
-            brandLogo: {
-                validators: {
-                    notEmpty: {
-                        message: "请上传图片"
-                    }
-                }
-            }
-        }
+        })
+        
     })
-    */
+    
 })
